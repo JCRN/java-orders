@@ -1,11 +1,11 @@
-package com.lambdaschool.orders;
+package local.jcrn.orders;
 
-import com.lambdaschool.orders.model.Agents;
-import com.lambdaschool.orders.model.Customers;
-import com.lambdaschool.orders.model.Orders;
-import com.lambdaschool.orders.repos.AgentsRepository;
-import com.lambdaschool.orders.repos.CustomersRepository;
-import com.lambdaschool.orders.repos.OrdersRepository;
+import local.jcrn.orders.model.Agents;
+import local.jcrn.orders.model.Customers;
+import local.jcrn.orders.model.Orders;
+import local.jcrn.orders.repos.AgentsRepository;
+import local.jcrn.orders.repos.CustomersRepository;
+import local.jcrn.orders.repos.OrdersRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +26,7 @@ public class SeedData implements CommandLineRunner
     }
 
     @Override
-    public void run(String... args) throws Exception
+    public void run(String[] args) throws Exception
     {
         Agents a01 = new Agents("Ramasundar", "Bangalore", 0.15, "077-25814763", "");
         Agents a02 = new Agents("Alex ", "London", 0.13, "075-12458969", "");

@@ -1,7 +1,7 @@
 package local.jcrn.orders.controllers;
 
-import local.jcrn.orders.models.Agent;
-import local.jcrn.orders.services.AgentService;
+import local.jcrn.orders.model.Orders;
+import local.jcrn.orders.services.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,17 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/agents")
-public class AgentController {
+@RequestMapping("/orders")
+public class OrdersController
+{
 
     @Autowired
-    private AgentService agentService;
+    private OrdersService ordersService;
 
     // localhost:2019/agents/agents
-    @GetMapping(value = "/agents", produces = {"application/json"})
-    public ResponseEntity<?> listAllAgents()
+    @GetMapping(value = "/orders", produces = {"application/json"})
+    public ResponseEntity<?> listAllOrders()
     {
-        List<Agent> agentsList = agentService.findAll();
-        return new ResponseEntity<>(agentsList, HttpStatus.OK);
+        List<Orders> ordersList = ordersService.findAll();
+        return new ResponseEntity<>(ordersList, HttpStatus.OK);
     }
 }
